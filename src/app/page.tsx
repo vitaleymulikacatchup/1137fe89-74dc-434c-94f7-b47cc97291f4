@@ -1,4 +1,4 @@
-import "use client";
+"use client";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import NavbarLayoutFloatingInline from '@/components/navbar/NavbarLayoutFloatingInline';
 import HeroSplit from '@/components/sections/hero/HeroSplit';
@@ -10,8 +10,6 @@ import ContactSplit from '@/components/sections/contact/ContactSplit';
 import FooterBase from '@/components/sections/footer/FooterBase';
 import { Sparkles, Star, Heart } from "lucide-react";
 
-const assetMap = [{"id":"hero","url":"https://images.pexels.com/photos/34301930/pexels-photo-34301930.jpeg?auto=compress&cs=tinysrgb&h=650&w=940","alt":"High-End Gaming PC Interior with Colorful RGB Lights"},{"id":"feature-1-image","url":"https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&h=650&w=940","alt":"A close-up of a hand with a pen analyzing data on colorful bar and line charts on paper."},{"id":"feature-2-image","url":"https://images.pexels.com/photos/2422280/pexels-photo-2422280.jpeg?auto=compress&cs=tinysrgb&h=650&w=940","alt":"Two professionals in business attire engage in a thoughtful discussion sitting in a stylish, modern room."},{"id":"contact-image","url":"https://images.pexels.com/photos/1591062/pexels-photo-1591062.jpeg?auto=compress&cs=tinysrgb&h=650&w=940","alt":"Close-up of the word 'email' formed with letter tiles on a gray surface."}];
-
 export default function HomePage() {
   return (
     <ThemeProvider
@@ -20,18 +18,16 @@ export default function HomePage() {
       borderRadius="rounded"
     >
       <div id="nav" data-section="nav" className="scroll-mt-24">
-        <div className="mx-auto px-4 md:px-6">
-          <NavbarLayoutFloatingInline
-            navItems={[
-              { name: "Home", id: "home" },
-              { name: "Features", id: "features" },
-              { name: "Pricing", id: "pricing" },
-              { name: "Contact", id: "contact" }
-            ]}
-            brandName="SaaS Platform"
-            buttonText="Join Now"
-          />
-        </div>
+        <NavbarLayoutFloatingInline
+          navItems={[
+            { name: "Home", id: "hero" },
+            { name: "Features", id: "feature" },
+            { name: "Pricing", id: "pricing" },
+            { name: "Contact", id: "contact" }
+          ]}
+          brandName="SaaS Platform"
+          buttonText="Join Now"
+        />
       </div>
 
       <div id="hero" data-section="hero" className="scroll-mt-24">
@@ -39,7 +35,7 @@ export default function HomePage() {
           <HeroSplit
             title="Boost Your Productivity"
             description="Harness the power of your workspace with our advanced SaaS tools."
-            imageSrc={assetMap.find(a => a.id === "hero")?.url ?? "/public/images/placeholder.webp"}
+            imageSrc="https://images.pexels.com/photos/34301930/pexels-photo-34301930.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
             buttons={[
               { text: "Get Started", href: "https://example.com" },
               { text: "Learn More", href: "features" }
@@ -55,7 +51,7 @@ export default function HomePage() {
               { title: "Efficient", description: "Streamline your workflow.", icon: Star },
               { title: "Intuitive", description: "User-friendly interfaces.", icon: Heart }
             ]}
-            imageSrc={assetMap.find(a => a.id === "feature-1-image")?.url ?? "/public/images/placeholder.webp"}
+            imageSrc="https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
           />
         </div>
       </div>
@@ -65,8 +61,8 @@ export default function HomePage() {
           <FeatureCardOne
             title="Our Features"
             features={[
-              { title: "Advanced Analytics", description: "Gain insights into your data.", imageSrc: assetMap.find(a => a.id === "feature-1-image")?.url ?? "/public/images/placeholder.webp" },
-              { title: "Collaboration Tools", description: "Work together seamlessly.", imageSrc: assetMap.find(a => a.id === "feature-2-image")?.url ?? "/public/images/placeholder.webp" }
+              { title: "Advanced Analytics", description: "Gain insights into your data.", imageSrc: "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" },
+              { title: "Collaboration Tools", description: "Work together seamlessly.", imageSrc: "https://images.pexels.com/photos/2422280/pexels-photo-2422280.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" }
             ]}
           />
         </div>
@@ -112,7 +108,7 @@ export default function HomePage() {
               { id: "1", title: "Can I upgrade at any time?", content: "Yes, you can upgrade your plan anytime." },
               { id: "2", title: "Is there a free trial?", content: "We offer a 14-day free trial of our Pro Plan." }
             ]}
-            imageSrc={assetMap.find(a => a.id === "feature-2-image")?.url ?? "/public/images/placeholder.webp"}
+            imageSrc="https://images.pexels.com/photos/2422280/pexels-photo-2422280.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
           />
         </div>
       </div>
@@ -123,7 +119,7 @@ export default function HomePage() {
             tag="Stay Connected"
             title="Join our community"
             description="Subscribe to our newsletter for updates and tips."
-            imageSrc={assetMap.find(a => a.id === "contact-image")?.url ?? "/public/images/placeholder.webp"}
+            imageSrc="https://images.pexels.com/photos/1591062/pexels-photo-1591062.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
             inputPlaceholder="Your email address"
             buttonText="Subscribe"
           />
